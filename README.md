@@ -31,7 +31,7 @@ This script download latest uploaded items to old items. So, max records can hel
 
 Ref: 
 
-<img src="https://gitlab.com/manimaran/wiki-commons-bulk-downloader-by-category/raw/master/files/wikimedia_commons_category_page_ex.png" width="700px" height="450px"></img>
+<img src="https://gitlab.com/manimaran/wiki-commons-bulk-downloader-by-category/-/raw/main/files/wikimedia_commons_category_page_ex.png" width="820px" height="420px"></img>
 
 Here, **Category:Files uploaded by spell4wiki in ta** is the category name.
 
