@@ -1,6 +1,7 @@
 import json
 import requests
 import urllib3
+import os
 from bs4 import BeautifulSoup
 import urllib.request
 import urllib.parse
@@ -101,6 +102,12 @@ def download_files():
 		d_filename = urllib.parse.unquote(dl).split("/")[-1]
 		print(str(index+1) + "/" + str(len(download_links)) + " => " + d_filename)
 		audio_request = requests.get(dl, allow_redirects=True)
-		open(d_filename, 'wb').write(audio_request.content)
+
+		dest_folder = category.replace(" ", "_")
+		if not os.path.exists(dest_folder):
+        		os.makedirs(dest_folder)  # create folder if it does not exist
+        	
+		file_path = os.path.join(dest_folder, d_filename)
+		open(file_path, 'wb').write(audio_request.content)
 		
 download_files()
