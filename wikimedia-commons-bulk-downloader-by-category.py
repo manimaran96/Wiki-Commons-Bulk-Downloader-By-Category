@@ -6,13 +6,15 @@ import urllib.request
 import urllib.parse
 from types import SimpleNamespace
 
+# Load config data
+from config import category
+from config import max_records
+from config import limit
+
 
 ses = requests.Session()
 wc_url = "https://commons.wikimedia.org/w/api.php"
 
-category = "Category:Files uploaded by spell4wiki in ta"
-limit = 3
-max_records = 1
 params_data = {
     "action": "query",
     "format": "json",
