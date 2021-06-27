@@ -35,7 +35,6 @@ Ref:
 
 Here, **Category:Files uploaded by spell4wiki in ta** is the category name.
 
-<img src="https://gitlab.com/manimaran/wiki-commons-bulk-downloader-by-category/-/raw/main/files/wikimedia_commons_download_script.png" width="820px" height="320px"></img>
 
 ## How to Run
 
@@ -82,6 +81,9 @@ pip install aiofiles
 ```shell
 python3 wikimedia-commons-bulk-downloader-by-category.py
 ```
+
+<img src="https://gitlab.com/manimaran/wiki-commons-bulk-downloader-by-category/-/raw/main/files/wikimedia_commons_download_script.png" width="820px" height="320px"></img>
+
 
 ## For Contributors
 If you willing to contibute this code. Please read below todo list and do your contribution. Before start your contribution make sure to create issue and assign your self. Which is help to reduce rework.
