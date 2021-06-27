@@ -24,8 +24,8 @@ Note: This script not only for audio files we can use this same script for other
 ## How this script working
 This script required category name and max record count. 
 
-1. REQUIRED: *category* is the wikimedia commons category name that have list of files: "Category:Files uploaded by spell4wiki in ta"
-2. OPTIONAL: *max_records* is the count of maximum records you want to download.
+1. REQUIRED: `category` is the wikimedia commons category name that have list of files: "Category:Files uploaded by spell4wiki in ta"
+2. OPTIONAL: `max_records` is the count of maximum records you want to download.
 
 This script download latest uploaded items to old items. So, max records can help to download the some count of latest items only.
 
@@ -35,6 +35,8 @@ Ref:
 
 Here, **Category:Files uploaded by spell4wiki in ta** is the category name.
 
+<img src="https://gitlab.com/manimaran/wiki-commons-bulk-downloader-by-category/-/raw/main/files/wikimedia_commons_download_script.png" width="820px" height="320px"></img>
+
 ## How to Run
 
 
@@ -42,18 +44,38 @@ Here, **Category:Files uploaded by spell4wiki in ta** is the category name.
 ```
 git clone https://gitlab.com/manimaran/wiki-commons-bulk-downloader-by-category.git 
 ```
-2. Open the file in editor and do change the category name and max record size
+2. Open the `config.py` file in editor and do change the `category`, `max_records` and `limit`
+
+Note: `max_records` and `limit` are optional 
 ```
-category = "Category:Files uploaded by spell4wiki in ta" // Wikimedia commons category name
-max_records = 1000 // Maximum download files count
+Wikimedia commons category name that have list of files like: "Category:Files uploaded by spell4wiki in ta"
+Ref: https://commons.wikimedia.org/wiki/Category:Files_uploaded_by_spell4wiki
 ```
+`category = "Category:Files uploaded by spell4wiki in CHECK"`
+
+```
+Optional
+Count of maximum records you want to download. 
+Recommended -1, It means no max_records limit. Download all the files in the above category
+Incase you want download recently uploaded files. Then, provide that limit. Ex. if you want to download recently uploaded 10 files then give 10.
+```
+`max_records = -1`
+
+```
+Optional
+Minimum 1 & Maximum 500, Recommended 500/200
+```
+`limit = 500`
+
 3. Install following libraries 
 ```
 sudo apt update
 sudo apt install python3
 sudo apt install python3-pip
-sudo apt install python3-bs4
-sudo apt install python3-urllib3
+pip install beautifulsoup4
+pip install aiohttp
+pip install asyncio
+pip install aiofiles
 ```
 4. Once all are done now we can run the script.
 
@@ -65,12 +87,8 @@ python3 wikimedia-commons-bulk-downloader-by-category.py
 If you willing to contibute this code. Please read below todo list and do your contribution. Before start your contribution make sure to create issue and assign your self. Which is help to reduce rework.
 
 ## Todo
-1. All audio files should download inside specific directory(category name). 
-2. Proper exception handling need to do.
-3. If possible to make all task by async way. Bcz that will reduce more time.
-4. Some packages install so make requirements.txt based on that.
-5. Avoid sub category as a file. That means Only consider the exact files.
-6. Offset and limit value should based on the max records value.
+1. Some packages install so make requirements.txt based on that.
+2. Fix: While downloding morethan 3000 or large files may failed. Bcz of concurrent download/scraping calls.
 
 *Optional*
 1. After downloaded files compressed in .zip file format
