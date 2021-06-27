@@ -1,16 +1,13 @@
 # Python script : Wikimedia Commons Bulk Downloader By Category
-import json
 import requests
-import urllib3
-import os
-import time
 import aiohttp
 import asyncio
 import aiofiles
 from bs4 import BeautifulSoup
-import urllib.request
-import urllib.parse
-from types import SimpleNamespace
+import urllib
+import json
+import os
+import time
 
 # Base config information imported from config.py
 from config import category
