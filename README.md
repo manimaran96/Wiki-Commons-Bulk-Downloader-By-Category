@@ -41,30 +41,18 @@ Here, **Category:Files uploaded by spell4wiki in ta** is the category name.
 
 1. Download/Clone this Repo
 ```
-git clone https://gitlab.com/manimaran/wiki-commons-bulk-downloader-by-category.git 
+git clone https://github.com/manimaran96/Wiki-Commons-Bulk-Downloader-By-Category.git 
 ```
 2. Open the `config.py` file in editor and do change the `category`, `max_records` and `limit`
 
 Note: `max_records` and `limit` are optional 
-```
-Wikimedia commons category name that have list of files like: "Category:Files uploaded by spell4wiki in ta"
-Ref: https://commons.wikimedia.org/wiki/Category:Files_uploaded_by_spell4wiki
-```
+
 `category = "Category:Files uploaded by spell4wiki in CHECK"`
-
-```
-Optional
-Count of maximum records you want to download. 
-Recommended -1, It means no max_records limit. Download all the files in the above category
-Incase you want download recently uploaded files. Then, provide that limit. Ex. if you want to download recently uploaded 10 files then give 10.
-```
 `max_records = -1`
-
-```
-Optional
-Minimum 1 & Maximum 500, Recommended 500/200
-```
 `limit = 500`
+
+More details to check config.py 
+
 
 3. Install following libraries 
 ```
